@@ -15,10 +15,25 @@ struct jsonstruct: Decodable{
 }
 
 class ViewController: UIViewController {
-    
+    //MARK:-Properties
     private var arr = [jsonstruct]()
+    var appId = "parsl"
+    var environment = "production"
+    var platform = "ios"
+    var appVeriosn = " "
+    var buildNo = " "
+   
+    
+    //MARK:- life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nsAppVersion: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
+        appVeriosn = nsAppVersion as! String
+//        let appVersion = nsAppVersion as! String
+        print("app version is \(appVeriosn)")
+        let nsBuildNo: AnyObject? = Bundle.main.infoDictionary!["CFBundleVersion"] as AnyObject
+        buildNo = nsBuildNo as! String
+        print("build no is \(buildNo)")
         
     }
     
@@ -54,9 +69,31 @@ class ViewController: UIViewController {
         task.resume()
     }
     
-    
+    func checkVersion(param: [String:Any]) {
+        UserHandler.checkVersion(param: param) { [self] (successResponse) in
+            if (successResponse.status as AnyObject) as? NSString == "1"{
+                let alert = Constants.showAlert(message: successResponse.message)
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            else{
+                let alert = Constants.showAlert(message: successResponse.message)
+                self.present(alert, animated: true, completion: nil)
+            }
+        } failure: { (error) in
+            let alert = Constants.showAlert(message: error.message)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+
+
     @IBAction func getRequest(_ sender: UIButton) {
-        urlRequest()
+//        urlRequest()
+        
+        let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": appVeriosn as AnyObject, "environment": environment as AnyObject, "build_no": buildNo as AnyObject ]
+        let data : [String : AnyObject] = ["data": params as AnyObject]
+        checkVersion(param: data)
     }
 }
 

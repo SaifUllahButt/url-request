@@ -54,4 +54,14 @@ class UserHandler {
         }
     }
 
+    class func checkVersion(param: [String:Any], success: @escaping(CheckVersionRoot)->Void, failure: @escaping(NetworkError)->Void) {
+        NetworkHandler.postRequest(url: checkAppVersion, parameters: param) { (successResponse) in
+            let dictionary = successResponse as! [String:Any]
+            let obj = CheckVersionRoot(fromDictionary: dictionary)
+            success(obj)
+        } failure: { (error) in
+            failure(NetworkError(status: Constants.NetworkError.generic, message: error.message))
+        }
+    }
+
 }
