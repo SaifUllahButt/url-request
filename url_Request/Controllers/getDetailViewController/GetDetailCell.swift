@@ -9,14 +9,16 @@
 import UIKit
 
 class GetDetailCell: UITableViewCell {
+    //MARK:- IBOutlet
     @IBOutlet weak var platform: UILabel!
     @IBOutlet weak var environment: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     @IBOutlet weak var buildNo: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        containerView.addShadow()
     }
-
+    //MARK:- Methods
     
 }

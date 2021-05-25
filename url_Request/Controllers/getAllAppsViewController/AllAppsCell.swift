@@ -9,13 +9,15 @@
 import UIKit
 
 class AllAppsCell: UITableViewCell {
+    //MARK:-IBOutets
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var appName: UILabel!
     @IBOutlet weak var appId: UILabel!
     @IBOutlet weak var appTimeStamp: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        containerView.addShadow()
     }
 
     

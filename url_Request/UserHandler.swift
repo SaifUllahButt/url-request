@@ -14,26 +14,7 @@ class UserHandler {
     static let shared = UserHandler()
     
     private init() {}
-    
-//    class func getPlaces(request: URLRequest, success: @escaping(PlacesRoot)-> Void, failure: @escaping(NetworkError)-> Void) {
-//        NetworkHandler.customPostRequest(urlRequest: request, success: { (successResponse) in
-//            let dictionary = successResponse as! [String: Any]
-//            let obj = PlacesRoot(fromDictionary: dictionary)
-//            success(obj)
-//        }) { (error) in
-//            failure(NetworkError(status: Constants.NetworkError.generic, message: error.message))
-//        }
-//    }
-    
-    class func getProfile(param: [String:Any], success: @escaping(Root)->Void, failure: @escaping(NetworkError)->Void) {
-        NetworkHandler.postRequest(url: uurl, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
-            let obj = Root(fromDictionary: dictionary)
-            success(obj)
-        } failure: { (error) in
-            failure(NetworkError(status: Constants.NetworkError.generic, message: error.message))
-        }
-    }
+   
     class func getAllApps(param: [String:Any], success: @escaping(AllAppsRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: allAppUrl, parameters: param) { (successResponse) in
             let dictionary = successResponse as! [String:Any]
@@ -58,6 +39,16 @@ class UserHandler {
         NetworkHandler.postRequest(url: checkAppVersion, parameters: param) { (successResponse) in
             let dictionary = successResponse as! [String:Any]
             let obj = CheckVersionRoot(fromDictionary: dictionary)
+            success(obj)
+        } failure: { (error) in
+            failure(NetworkError(status: Constants.NetworkError.generic, message: error.message))
+        }
+    }
+    
+    class func updateVersion(param: [String:Any], success: @escaping(UpdateVersionRoot)->Void, failure: @escaping(NetworkError)->Void) {
+        NetworkHandler.postRequest(url: updateVersionUrl, parameters: param) { (successResponse) in
+            let dictionary = successResponse as! [String:Any]
+            let obj = UpdateVersionRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in
             failure(NetworkError(status: Constants.NetworkError.generic, message: error.message))

@@ -14,9 +14,6 @@
 		2800422E24E56CBD00CF59FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2800422D24E56CBD00CF59FF /* Assets.xcassets */; };
 		2800423124E56CBD00CF59FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2800422F24E56CBD00CF59FF /* LaunchScreen.storyboard */; };
 		2800423924E56E0C00CF59FF /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2800423824E56E0C00CF59FF /* File.swift */; };
-		2815297426528C640017B668 /* secondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297326528C640017B668 /* secondViewController.swift */; };
-		2815297726528DAC0017B668 /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297626528DAC0017B668 /* Root.swift */; };
-		2815297926528DB70017B668 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297826528DB70017B668 /* Data.swift */; };
 		2815297B265290D00017B668 /* UserHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297A265290D00017B668 /* UserHandler.swift */; };
 		2815297D265291240017B668 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297C265291240017B668 /* NetworkHandler.swift */; };
 		2815297F265291670017B668 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2815297E265291670017B668 /* Constants.swift */; };
@@ -32,6 +29,13 @@
 		2815299B2652DF4E0017B668 /* GetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281529992652DF4E0017B668 /* GetDetailCell.swift */; };
 		2815299C2652DF4E0017B668 /* GetDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2815299A2652DF4E0017B668 /* GetDetailCell.xib */; };
 		28F9E791265567E700D8294D /* CheckVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F9E790265567E700D8294D /* CheckVersionRoot.swift */; };
+		66EA4756265CDE47003CF816 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4755265CDE47003CF816 /* View.swift */; };
+		66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4758265CE528003CF816 /* CheckVersionViewController.swift */; };
+		66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */; };
+		66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */; };
+		66EA4761265D2E00003CF816 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4760265D2E00003CF816 /* FirstViewController.swift */; };
+		66EA4763265D2E0B003CF816 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4762265D2E0B003CF816 /* SecondViewController.swift */; };
+		66EA4765265D2E11003CF816 /* VersionCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4764265D2E11003CF816 /* VersionCheckVC.swift */; };
 		9EC9259E136635599DA31901 /* Pods_url_Request.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF77FA090BC289B5F87F31EC /* Pods_url_Request.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,9 +49,6 @@
 		2800423024E56CBD00CF59FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2800423224E56CBD00CF59FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2800423824E56E0C00CF59FF /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
-		2815297326528C640017B668 /* secondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewController.swift; sourceTree = "<group>"; };
-		2815297626528DAC0017B668 /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
-		2815297826528DB70017B668 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		2815297A265290D00017B668 /* UserHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHandler.swift; sourceTree = "<group>"; };
 		2815297C265291240017B668 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		2815297E265291670017B668 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -63,6 +64,13 @@
 		281529992652DF4E0017B668 /* GetDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailCell.swift; sourceTree = "<group>"; };
 		2815299A2652DF4E0017B668 /* GetDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetDetailCell.xib; sourceTree = "<group>"; };
 		28F9E790265567E700D8294D /* CheckVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionRoot.swift; sourceTree = "<group>"; };
+		66EA4755265CDE47003CF816 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		66EA4758265CE528003CF816 /* CheckVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionViewController.swift; sourceTree = "<group>"; };
+		66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionViewController.swift; sourceTree = "<group>"; };
+		66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionRoot.swift; sourceTree = "<group>"; };
+		66EA4760265D2E00003CF816 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/FirstViewController.swift"; sourceTree = "<group>"; };
+		66EA4762265D2E0B003CF816 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/SecondViewController.swift"; sourceTree = "<group>"; };
+		66EA4764265D2E11003CF816 /* VersionCheckVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionCheckVC.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/VersionCheckVC.swift"; sourceTree = "<group>"; };
 		94060A4BECBA11DC77621A71 /* Pods-url_Request.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-url_Request.release.xcconfig"; path = "Target Support Files/Pods-url_Request/Pods-url_Request.release.xcconfig"; sourceTree = "<group>"; };
 		9F66C5764F061D126D851B62 /* Pods-url_Request.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-url_Request.debug.xcconfig"; path = "Target Support Files/Pods-url_Request/Pods-url_Request.debug.xcconfig"; sourceTree = "<group>"; };
 		CF77FA090BC289B5F87F31EC /* Pods_url_Request.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_url_Request.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +109,7 @@
 		2800422324E56CBB00CF59FF /* url_Request */ = {
 			isa = PBXGroup;
 			children = (
+				66EA4754265CDE3A003CF816 /* View */,
 				281529862652C0A00017B668 /* Models */,
 				2800422424E56CBB00CF59FF /* AppDelegate.swift */,
 				2800422624E56CBB00CF59FF /* SceneDelegate.swift */,
@@ -114,43 +123,30 @@
 				2815297C265291240017B668 /* NetworkHandler.swift */,
 				2815297E265291670017B668 /* Constants.swift */,
 				281529802652939E0017B668 /* NetworkAvailability.swift */,
-				281529872652C0B60017B668 /* New Group1 */,
 			);
 			path = url_Request;
-			sourceTree = "<group>";
-		};
-		2815297526528D9E0017B668 /* Root */ = {
-			isa = PBXGroup;
-			children = (
-				2815297626528DAC0017B668 /* Root.swift */,
-				2815297826528DB70017B668 /* Data.swift */,
-			);
-			path = Root;
 			sourceTree = "<group>";
 		};
 		281529862652C0A00017B668 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				66EA475D265D02FE003CF816 /* UpdateVersionRoot */,
 				28F9E78F265567CF00D8294D /* CheckVersionRoot */,
 				281529942652D7670017B668 /* DetailAppRoot */,
 				2815298F2652C2C90017B668 /* AllAppsRoot */,
-				2815297526528D9E0017B668 /* Root */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		281529872652C0B60017B668 /* New Group1 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		281529882652C0C50017B668 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				66EA4760265D2E00003CF816 /* FirstViewController.swift */,
+				66EA4762265D2E0B003CF816 /* SecondViewController.swift */,
+				66EA4764265D2E11003CF816 /* VersionCheckVC.swift */,
+				66EA475A265CFFE9003CF816 /* UpdateVersionViewController */,
+				66EA4757265CE512003CF816 /* CheckVersionViewController */,
 				2800422824E56CBB00CF59FF /* ViewController.swift */,
-				2815297326528C640017B668 /* secondViewController.swift */,
 				281529892652C0E10017B668 /* getAllAppsViewController */,
 				2815298A2652C1030017B668 /* getDetailViewController */,
 			);
@@ -201,6 +197,38 @@
 				28F9E790265567E700D8294D /* CheckVersionRoot.swift */,
 			);
 			path = CheckVersionRoot;
+			sourceTree = "<group>";
+		};
+		66EA4754265CDE3A003CF816 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66EA4755265CDE47003CF816 /* View.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66EA4757265CE512003CF816 /* CheckVersionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66EA4758265CE528003CF816 /* CheckVersionViewController.swift */,
+			);
+			path = CheckVersionViewController;
+			sourceTree = "<group>";
+		};
+		66EA475A265CFFE9003CF816 /* UpdateVersionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */,
+			);
+			path = UpdateVersionViewController;
+			sourceTree = "<group>";
+		};
+		66EA475D265D02FE003CF816 /* UpdateVersionRoot */ = {
+			isa = PBXGroup;
+			children = (
+				66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */,
+			);
+			path = UpdateVersionRoot;
 			sourceTree = "<group>";
 		};
 		72C09BDC625A6D0817C3EA20 /* Frameworks */ = {
@@ -338,25 +366,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				281529852652C0610017B668 /* getDetailViewController.swift in Sources */,
-				2815297926528DB70017B668 /* Data.swift in Sources */,
+				66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */,
 				2815299B2652DF4E0017B668 /* GetDetailCell.swift in Sources */,
 				281529982652D7830017B668 /* DetailAppData.swift in Sources */,
+				66EA4765265D2E11003CF816 /* VersionCheckVC.swift in Sources */,
 				2815297B265290D00017B668 /* UserHandler.swift in Sources */,
+				66EA4756265CDE47003CF816 /* View.swift in Sources */,
 				28F9E791265567E700D8294D /* CheckVersionRoot.swift in Sources */,
 				281529932652C2F00017B668 /* AllAppsData.swift in Sources */,
 				2800422924E56CBB00CF59FF /* ViewController.swift in Sources */,
 				2800423924E56E0C00CF59FF /* File.swift in Sources */,
+				66EA4763265D2E0B003CF816 /* SecondViewController.swift in Sources */,
+				66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */,
 				281529962652D77A0017B668 /* DetailAppRoot.swift in Sources */,
 				281529812652939E0017B668 /* NetworkAvailability.swift in Sources */,
+				66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */,
 				281529912652C2E40017B668 /* AllAppsRoot.swift in Sources */,
 				2800422524E56CBB00CF59FF /* AppDelegate.swift in Sources */,
 				2815297F265291670017B668 /* Constants.swift in Sources */,
-				2815297426528C640017B668 /* secondViewController.swift in Sources */,
 				2800422724E56CBB00CF59FF /* SceneDelegate.swift in Sources */,
 				281529832652C0560017B668 /* getAllAppsViewController.swift in Sources */,
 				2815298D2652C1330017B668 /* AllAppsCell.swift in Sources */,
-				2815297726528DAC0017B668 /* Root.swift in Sources */,
 				2815297D265291240017B668 /* NetworkHandler.swift in Sources */,
+				66EA4761265D2E00003CF816 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 5VX6R788RB;
 				INFOPLIST_FILE = url_Request/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,6 +558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 5VX6R788RB;
 				INFOPLIST_FILE = url_Request/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

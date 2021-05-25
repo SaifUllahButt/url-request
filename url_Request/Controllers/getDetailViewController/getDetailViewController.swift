@@ -20,33 +20,62 @@ class getDetailViewController: UIViewController {
         }
     }
     
-    
-    
+    @IBOutlet weak var checkVersionOutlet: UIButton!
+    @IBOutlet weak var updateVersionOutlet: UIButton!
     
     //MARK:- Propeties
     var dataArray = [DetailAppData]()
     var name = ""
     var appId = ""
+    var environment = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        navigationController?.navigationBar.barTintColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1)
+        setButtonStyle()
+        
 //        appName.text = name
         print("app id is......... \(appId)")
         
         let params : [String : AnyObject] = ["app_id": appId as AnyObject]
         let data : [String : AnyObject] = ["data": params as AnyObject]
         getDetail(param: data)
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
     }
     
     
     //MARK:- Methods
+    
+    func setButtonStyle(){
+        checkVersionOutlet.layer.borderColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1).cgColor
+        checkVersionOutlet.layer.cornerRadius = checkVersionOutlet.frame.size.height/2.5
+        checkVersionOutlet.layer.borderWidth = 1
+        checkVersionOutlet.clipsToBounds = true
+        updateVersionOutlet.layer.borderColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1).cgColor
+        updateVersionOutlet.layer.cornerRadius = updateVersionOutlet.frame.size.height/2.5
+        updateVersionOutlet.layer.borderWidth = 1
+        updateVersionOutlet.clipsToBounds = true
+    }
+    
+    @objc func pullToRefresh(){
+        print("refreshing start")
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            let params : [String : AnyObject] = ["app_id": self.appId as AnyObject]
+            let data : [String : AnyObject] = ["data": params as AnyObject]
+            self.getDetail(param: data)
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
     func getDetail(param: [String:Any]) {
         UserHandler.getDetail(param: param) { [self] (successResponse) in
             if successResponse.message == "Success"{
                 self.dataArray = successResponse.data
                 print("found....")
                 self.dataArray = successResponse.data
+                
                 self.tableView.reloadData()
             } else {
                 let alert = Constants.showAlert(message: successResponse.message)
@@ -58,6 +87,23 @@ class getDetailViewController: UIViewController {
         }
         
     }
+    
+    //MARK:-IBActions
+    @IBAction func checkVersionBtn(_ sender: Any) {
+        print("check version")
+        let vc = storyboard?.instantiateViewController(identifier: "CheckVersionViewController")as! CheckVersionViewController
+        vc.appId = appId
+        vc.environment = environment
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    @IBAction func updateVersionBtn(_ sender: Any) {
+        print("update version")
+        let vc = storyboard?.instantiateViewController(identifier: "UpdateVersionViewController")as! UpdateVersionViewController
+        vc.appId = appId
+        vc.environment = environment
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
 
 
@@ -79,6 +125,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     }
     if let environment = objData.environment {
         cell.environment.text = environment
+        self.environment = environment
     }
     if let buildNo = objData.buildNo {
         cell.buildNo.text = buildNo

@@ -29,45 +29,44 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let nsAppVersion: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
         appVeriosn = nsAppVersion as! String
-//        let appVersion = nsAppVersion as! String
         print("app version is \(appVeriosn)")
         let nsBuildNo: AnyObject? = Bundle.main.infoDictionary!["CFBundleVersion"] as AnyObject
         buildNo = nsBuildNo as! String
         print("build no is \(buildNo)")
         
     }
-    
-    func urlRequest() {
-        let session = URLSession.shared
-        let url = URL(string: "https://restcountries.eu/rest/v2/all")!
-      
-        let task = session.dataTask(with: url) { data, response, error in
-            if error != nil || data == nil {
-                print("Client error!")
-                return
-            }
-            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-                print("Server error!")
-                return
-            }
-            guard let mime = response.mimeType, mime == "application/json" else {
-                print("Wrong MIME type!")
-                return
-            }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                print(json)
-                self.arr = try JSONDecoder().decode([jsonstruct].self, from: data!)
-                for mai in self.arr{
-                    print(mai.name,":", mai.region)
-                }
-                
-            } catch {
-                print("JSON error: \(error.localizedDescription)")
-            }
-        }
-        task.resume()
-    }
+//
+//    func urlRequest() {
+//        let session = URLSession.shared
+//        let url = URL(string: "https://restcountries.eu/rest/v2/all")!
+//
+//        let task = session.dataTask(with: url) { data, response, error in
+//            if error != nil || data == nil {
+//                print("Client error!")
+//                return
+//            }
+//            guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
+//                print("Server error!")
+//                return
+//            }
+//            guard let mime = response.mimeType, mime == "application/json" else {
+//                print("Wrong MIME type!")
+//                return
+//            }
+//            do {
+//                let json = try JSONSerialization.jsonObject(with: data!, options: [])
+//                print(json)
+//                self.arr = try JSONDecoder().decode([jsonstruct].self, from: data!)
+//                for mai in self.arr{
+//                    print(mai.name,":", mai.region)
+//                }
+//
+//            } catch {
+//                print("JSON error: \(error.localizedDescription)")
+//            }
+//        }
+//        task.resume()
+//    }
     
     func checkVersion(param: [String:Any]) {
         UserHandler.checkVersion(param: param) { [self] (successResponse) in

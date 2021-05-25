@@ -10,6 +10,7 @@ import UIKit
 
 class getAllAppsViewController: UIViewController {
 
+    //MARK:-IBOutlets
     @IBOutlet weak var tableView: UITableView!{
         didSet {
             tableView.delegate = self
@@ -20,16 +21,33 @@ class getAllAppsViewController: UIViewController {
         }
     }
     //MARK:- Properties
-    
     var dataArray = [AllAppsData]()
+    
+    //MARK:- Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         let data : [String : AnyObject] = [:]
         getAllApps(param: data)
-        // Do any additional setup after loading the view.
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.navigationBar.barTintColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1)
+        navigationController?.navigationBar.tintColor = UIColor.white
     }
 //MARK:- Methods
+    @objc func pullToRefresh(){
+        print("refreshing start")
+        DispatchQueue.main.asyncAfter(deadline: .now()+1){
+            let data : [String : AnyObject] = [:]
+            self.getAllApps(param: data)
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
+    
     func getAllApps(param: [String:Any]) {
         UserHandler.getAllApps(param: param) { [self] (successResponse) in
             if successResponse.message == "Success"{
@@ -46,6 +64,7 @@ class getAllAppsViewController: UIViewController {
         }
         
     }
+    
   }
 
     
