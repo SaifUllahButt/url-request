@@ -17,6 +17,7 @@ let allAppUrl = "https://parsl.io/get/all/apps"
 let detailAppUrl = "https://parsl.io/get/app/details"
 let checkAppVersion = "https://parsl.io/check/version"
 let updateVersionUrl = "https://parsl.io/update/version"
+let addAppUrl = "https://parsl.io/add/app"
 
 class Constants {
     

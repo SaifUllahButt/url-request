@@ -29,6 +29,7 @@
 		2815299B2652DF4E0017B668 /* GetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281529992652DF4E0017B668 /* GetDetailCell.swift */; };
 		2815299C2652DF4E0017B668 /* GetDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2815299A2652DF4E0017B668 /* GetDetailCell.xib */; };
 		28F9E791265567E700D8294D /* CheckVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F9E790265567E700D8294D /* CheckVersionRoot.swift */; };
+		663DB704265E33ED007DC87D /* AddAppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DB703265E33ED007DC87D /* AddAppRoot.swift */; };
 		66EA4756265CDE47003CF816 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4755265CDE47003CF816 /* View.swift */; };
 		66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4758265CE528003CF816 /* CheckVersionViewController.swift */; };
 		66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */; };
@@ -64,6 +65,7 @@
 		281529992652DF4E0017B668 /* GetDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailCell.swift; sourceTree = "<group>"; };
 		2815299A2652DF4E0017B668 /* GetDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetDetailCell.xib; sourceTree = "<group>"; };
 		28F9E790265567E700D8294D /* CheckVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionRoot.swift; sourceTree = "<group>"; };
+		663DB703265E33ED007DC87D /* AddAppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppRoot.swift; sourceTree = "<group>"; };
 		66EA4755265CDE47003CF816 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		66EA4758265CE528003CF816 /* CheckVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionViewController.swift; sourceTree = "<group>"; };
 		66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		281529862652C0A00017B668 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				663DB702265E33E4007DC87D /* AddAppRoot */,
 				66EA475D265D02FE003CF816 /* UpdateVersionRoot */,
 				28F9E78F265567CF00D8294D /* CheckVersionRoot */,
 				281529942652D7670017B668 /* DetailAppRoot */,
@@ -197,6 +200,14 @@
 				28F9E790265567E700D8294D /* CheckVersionRoot.swift */,
 			);
 			path = CheckVersionRoot;
+			sourceTree = "<group>";
+		};
+		663DB702265E33E4007DC87D /* AddAppRoot */ = {
+			isa = PBXGroup;
+			children = (
+				663DB703265E33ED007DC87D /* AddAppRoot.swift */,
+			);
+			path = AddAppRoot;
 			sourceTree = "<group>";
 		};
 		66EA4754265CDE3A003CF816 /* View */ = {
@@ -365,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				663DB704265E33ED007DC87D /* AddAppRoot.swift in Sources */,
 				281529852652C0610017B668 /* getDetailViewController.swift in Sources */,
 				66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */,
 				2815299B2652DF4E0017B668 /* GetDetailCell.swift in Sources */,

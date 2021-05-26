@@ -10,6 +10,7 @@ import UIKit
 
 class UpdateVersionViewController: UIViewController {
     //MARK:-IBoutlet
+    @IBOutlet weak var addCmntsOutlet: UIButton!
     @IBOutlet weak var versionOulet: UITextField!
     @IBOutlet weak var buildOutlet: UITextField!
     @IBOutlet weak var updateOutlet: UIButton!
@@ -18,10 +19,12 @@ class UpdateVersionViewController: UIViewController {
     @IBOutlet weak var iosBtn: UIButton!
     @IBOutlet weak var androidBtn: UIButton!
     
+    @IBOutlet weak var webBtn: UIButton!
     //MARK:-Properties
     var appId = ""
     var environment = ""
     var platform = ""
+    var commentArr = [String]()
     
     //MARK:- LifeCycle
     override func viewDidLoad() {
@@ -30,6 +33,7 @@ class UpdateVersionViewController: UIViewController {
         iosBtn.isSelected = true
         platform = "ios"
         styleFieldAndButtons()
+        
        
      
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard));        view.addGestureRecognizer(tap)
@@ -41,6 +45,9 @@ class UpdateVersionViewController: UIViewController {
     //MARK:-Methods
     
      func styleFieldAndButtons(){
+        addCmntsOutlet.layer.cornerRadius = 3
+        addCmntsOutlet.clipsToBounds = true
+        
         versionOulet.roundCorners(radius: versionOulet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
         buildOutlet.roundCorners(radius: buildOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
         commentsOutlet.roundCorners(radius: commentsOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
@@ -76,17 +83,30 @@ class UpdateVersionViewController: UIViewController {
     }
     //MARK:-IBActions
     
+    @IBAction func addComentBtn(_ sender: Any) {
+        self.commentArr.append(commentsOutlet.text!)
+        commentsOutlet.text = nil
+    }
     @IBAction func checkButtons(_ sender: UIButton) {
         if sender.tag == 1{
             iosBtn.isSelected = true
             androidBtn.isSelected = false
+            webBtn.isSelected = false
             self.platform = "ios"
             print(platform)
         }
         else if sender.tag == 2  {
             androidBtn.isSelected = true
             iosBtn.isSelected = false
+            webBtn.isSelected = false
             self.platform = "android"
+            print(platform)
+        }
+        else if sender.tag == 3  {
+            webBtn.isSelected = true
+            iosBtn.isSelected = false
+            androidBtn.isSelected = false
+            self.platform = "web"
             print(platform)
         }
     }
@@ -99,7 +119,8 @@ class UpdateVersionViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
         else{
-            let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": versionOulet.text as AnyObject, "environment": environment as AnyObject, "build_no": buildOutlet.text as AnyObject, "comments": commentsOutlet.text as AnyObject  ]
+            self.commentArr.append(commentsOutlet.text!)
+            let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": versionOulet.text as AnyObject, "environment": environment as AnyObject, "build_no": buildOutlet.text as AnyObject, "comments": commentArr as AnyObject  ]
         let data : [String : AnyObject] = ["data": params as AnyObject]
         print(data)
         updateVersion(param: data)
