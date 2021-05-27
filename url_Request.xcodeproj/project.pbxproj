@@ -30,13 +30,13 @@
 		2815299C2652DF4E0017B668 /* GetDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2815299A2652DF4E0017B668 /* GetDetailCell.xib */; };
 		28F9E791265567E700D8294D /* CheckVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F9E790265567E700D8294D /* CheckVersionRoot.swift */; };
 		663DB704265E33ED007DC87D /* AddAppRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663DB703265E33ED007DC87D /* AddAppRoot.swift */; };
+		66620AA8265F9D05006378FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66620AA7265F9D05006378FC /* FirstViewController.swift */; };
+		66620AAC265F9D15006378FC /* VersionCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66620AAB265F9D15006378FC /* VersionCheckVC.swift */; };
 		66EA4756265CDE47003CF816 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4755265CDE47003CF816 /* View.swift */; };
 		66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4758265CE528003CF816 /* CheckVersionViewController.swift */; };
 		66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */; };
 		66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */; };
-		66EA4761265D2E00003CF816 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4760265D2E00003CF816 /* FirstViewController.swift */; };
-		66EA4763265D2E0B003CF816 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4762265D2E0B003CF816 /* SecondViewController.swift */; };
-		66EA4765265D2E11003CF816 /* VersionCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4764265D2E11003CF816 /* VersionCheckVC.swift */; };
+		66F4C5B2265F9F2600113865 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F4C5B1265F9F2600113865 /* SecondViewController.swift */; };
 		9EC9259E136635599DA31901 /* Pods_url_Request.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF77FA090BC289B5F87F31EC /* Pods_url_Request.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,13 +66,13 @@
 		2815299A2652DF4E0017B668 /* GetDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GetDetailCell.xib; sourceTree = "<group>"; };
 		28F9E790265567E700D8294D /* CheckVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionRoot.swift; sourceTree = "<group>"; };
 		663DB703265E33ED007DC87D /* AddAppRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAppRoot.swift; sourceTree = "<group>"; };
+		66620AA7265F9D05006378FC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		66620AAB265F9D15006378FC /* VersionCheckVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionCheckVC.swift; sourceTree = "<group>"; };
 		66EA4755265CDE47003CF816 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		66EA4758265CE528003CF816 /* CheckVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionViewController.swift; sourceTree = "<group>"; };
 		66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionViewController.swift; sourceTree = "<group>"; };
 		66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionRoot.swift; sourceTree = "<group>"; };
-		66EA4760265D2E00003CF816 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirstViewController.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/FirstViewController.swift"; sourceTree = "<group>"; };
-		66EA4762265D2E0B003CF816 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/SecondViewController.swift"; sourceTree = "<group>"; };
-		66EA4764265D2E11003CF816 /* VersionCheckVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VersionCheckVC.swift; path = "../../../../../Downloads/TaskA 2/TaskA/Controller/VersionCheckVC.swift"; sourceTree = "<group>"; };
+		66F4C5B1265F9F2600113865 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		94060A4BECBA11DC77621A71 /* Pods-url_Request.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-url_Request.release.xcconfig"; path = "Target Support Files/Pods-url_Request/Pods-url_Request.release.xcconfig"; sourceTree = "<group>"; };
 		9F66C5764F061D126D851B62 /* Pods-url_Request.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-url_Request.debug.xcconfig"; path = "Target Support Files/Pods-url_Request/Pods-url_Request.debug.xcconfig"; sourceTree = "<group>"; };
 		CF77FA090BC289B5F87F31EC /* Pods_url_Request.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_url_Request.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,9 +144,9 @@
 		281529882652C0C50017B668 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				66EA4760265D2E00003CF816 /* FirstViewController.swift */,
-				66EA4762265D2E0B003CF816 /* SecondViewController.swift */,
-				66EA4764265D2E11003CF816 /* VersionCheckVC.swift */,
+				66620AA7265F9D05006378FC /* FirstViewController.swift */,
+				66F4C5B1265F9F2600113865 /* SecondViewController.swift */,
+				66620AAB265F9D15006378FC /* VersionCheckVC.swift */,
 				66EA475A265CFFE9003CF816 /* UpdateVersionViewController */,
 				66EA4757265CE512003CF816 /* CheckVersionViewController */,
 				2800422824E56CBB00CF59FF /* ViewController.swift */,
@@ -381,16 +381,17 @@
 				66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */,
 				2815299B2652DF4E0017B668 /* GetDetailCell.swift in Sources */,
 				281529982652D7830017B668 /* DetailAppData.swift in Sources */,
-				66EA4765265D2E11003CF816 /* VersionCheckVC.swift in Sources */,
+				66620AA8265F9D05006378FC /* FirstViewController.swift in Sources */,
+				66F4C5B2265F9F2600113865 /* SecondViewController.swift in Sources */,
 				2815297B265290D00017B668 /* UserHandler.swift in Sources */,
 				66EA4756265CDE47003CF816 /* View.swift in Sources */,
 				28F9E791265567E700D8294D /* CheckVersionRoot.swift in Sources */,
 				281529932652C2F00017B668 /* AllAppsData.swift in Sources */,
 				2800422924E56CBB00CF59FF /* ViewController.swift in Sources */,
 				2800423924E56E0C00CF59FF /* File.swift in Sources */,
-				66EA4763265D2E0B003CF816 /* SecondViewController.swift in Sources */,
 				66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */,
 				281529962652D77A0017B668 /* DetailAppRoot.swift in Sources */,
+				66620AAC265F9D15006378FC /* VersionCheckVC.swift in Sources */,
 				281529812652939E0017B668 /* NetworkAvailability.swift in Sources */,
 				66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */,
 				281529912652C2E40017B668 /* AllAppsRoot.swift in Sources */,
@@ -400,7 +401,6 @@
 				281529832652C0560017B668 /* getAllAppsViewController.swift in Sources */,
 				2815298D2652C1330017B668 /* AllAppsCell.swift in Sources */,
 				2815297D265291240017B668 /* NetworkHandler.swift in Sources */,
-				66EA4761265D2E00003CF816 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
