@@ -14,15 +14,17 @@ class UpdateVersionViewController: UIViewController {
     @IBOutlet weak var versionOulet: UITextField!
     @IBOutlet weak var buildOutlet: UITextField!
     @IBOutlet weak var updateOutlet: UIButton!
+    @IBOutlet weak var testFlightBtnOutlet: UIButton!
     @IBOutlet weak var commentsOutlet: UITextField!
     
+    @IBOutlet weak var productionBtnOutlet: UIButton!
     @IBOutlet weak var iosBtn: UIButton!
     @IBOutlet weak var androidBtn: UIButton!
     
     @IBOutlet weak var webBtn: UIButton!
     //MARK:-Properties
     var appId = ""
-    var environment = ""
+    var environment = "production"
     var platform = ""
     var commentArr = [String]()
     
@@ -33,6 +35,7 @@ class UpdateVersionViewController: UIViewController {
         iosBtn.isSelected = true
         platform = "ios"
         styleFieldAndButtons()
+        productionBtnOutlet.isSelected = true
         
        
      
@@ -83,6 +86,11 @@ class UpdateVersionViewController: UIViewController {
     }
     //MARK:-IBActions
     
+    
+    @IBAction func produnctionBtnOutlet(_ sender: Any) {
+    }
+    @IBAction func testBtnOutlet(_ sender: Any) {
+    }
     @IBAction func addComentBtn(_ sender: Any) {
         self.commentArr.append(commentsOutlet.text!)
         commentsOutlet.text = nil
@@ -110,6 +118,21 @@ class UpdateVersionViewController: UIViewController {
             print(platform)
         }
     }
+    
+    @IBAction func environmentCheckBtns(_ sender: UIButton) {
+        if sender.tag == 1{
+            self.environment = "production"
+            productionBtnOutlet.isSelected = true
+            testFlightBtnOutlet.isSelected = false
+            
+        }
+        else if sender.tag == 2{
+            self.environment = "testflight"
+            testFlightBtnOutlet.isSelected = true
+            productionBtnOutlet.isSelected = false
+        }
+    }
+    
     
     @IBAction func updateBtn(_ sender: Any) {
         print("update ")

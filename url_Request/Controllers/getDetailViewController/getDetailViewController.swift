@@ -100,7 +100,7 @@ class getDetailViewController: UIViewController {
         print("update version")
         let vc = storyboard?.instantiateViewController(identifier: "UpdateVersionViewController")as! UpdateVersionViewController
         vc.appId = appId
-        vc.environment = environment
+//        vc.environment = environment
         navigationController?.pushViewController(vc, animated: true)
     }
     

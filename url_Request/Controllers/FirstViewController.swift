@@ -25,6 +25,7 @@ class FirstViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.white
     }
     
+    //MARK:-IBActions
     @IBAction func addAppBtn(_ sender: UIButton) {
      
         let vc = storyboard?.instantiateViewController(identifier: "SecondViewController")as! SecondViewController
@@ -37,6 +38,10 @@ class FirstViewController: UIViewController {
         navigationController?.pushViewController(s, animated: true)
     }
     
+    @IBAction func allAppsBtn(_ sender: Any) {
+        let s = storyboard?.instantiateViewController(identifier: "getAllAppsViewController")as! getAllAppsViewController
+        navigationController?.pushViewController(s, animated: true)
+    }
     
 
 }

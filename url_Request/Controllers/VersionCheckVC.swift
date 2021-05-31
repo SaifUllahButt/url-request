@@ -21,6 +21,7 @@ class VersionCheckVC: UIViewController {
     
     var productionBtnFlag = false
     var testBtnFlag = false
+    var environment = ""
     
     
     override func viewDidLoad() {
@@ -72,7 +73,9 @@ class VersionCheckVC: UIViewController {
             sender.setBackgroundImage(UIImage(named: "radioBtnSelected"), for: UIControl.State.normal)
             testBtn.setBackgroundImage(UIImage(named: "radioBtnDefault"), for: UIControl.State.normal)
         productionBtnFlag = true
+            self.environment = "production"
         testBtnFlag = false
+            
         }
     }
     
@@ -82,21 +85,14 @@ class VersionCheckVC: UIViewController {
             productionBtn.setBackgroundImage(UIImage(named: "radioBtnDefault"), for: UIControl.State.normal)
         productionBtnFlag = false
         testBtnFlag = true
+            self.environment = "testflight"
         }
     }
     
     
     @IBAction func printBtn(_ sender: UIButton) {
         
-        var environment : String
-        
-        if productionBtnFlag == true{
-     environment = "production"
-        }
-        else {
-            environment = "test"
-        }
-        if platformField.text == "" || appIdField.text == "" || versionNoField.text == "" || buildNoField.text == ""{
+        if platformField.text == "" || appIdField.text == "" || versionNoField.text == "" || buildNoField.text == "" {
             
             let alert = Constants.showAlert(message: "Please Fill all fields")
             self.present(alert, animated: true, completion: nil)

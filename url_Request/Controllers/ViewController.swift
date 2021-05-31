@@ -25,16 +25,42 @@ class ViewController: UIViewController {
    
     
     //MARK:- life Cycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear...")
+    }
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        print("view will layout subview")
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("view did layout subview")
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view did disappear")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nsAppVersion: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
-        appVeriosn = nsAppVersion as! String
-        print("app version is \(appVeriosn)")
-        let nsBuildNo: AnyObject? = Bundle.main.infoDictionary!["CFBundleVersion"] as AnyObject
-        buildNo = nsBuildNo as! String
-        print("build no is \(buildNo)")
+        print("view did load")
+//        let nsAppVersion: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject
+//        appVeriosn = nsAppVersion as! String
+//        print("app version is \(appVeriosn)")
+//        let nsBuildNo: AnyObject? = Bundle.main.infoDictionary!["CFBundleVersion"] as AnyObject
+//        buildNo = nsBuildNo as! String
+//        print("build no is \(buildNo)")
         
     }
+   
 //
 //    func urlRequest() {
 //        let session = URLSession.shared
@@ -92,7 +118,8 @@ class ViewController: UIViewController {
         
         let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": appVeriosn as AnyObject, "environment": environment as AnyObject, "build_no": buildNo as AnyObject ]
         let data : [String : AnyObject] = ["data": params as AnyObject]
-        checkVersion(param: data)
+        print(data)
+//        checkVersion(param: data)
     }
 }
 
