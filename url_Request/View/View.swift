@@ -86,7 +86,7 @@ extension UIView {
         layer.shadowRadius = 5
         layer.cornerRadius = cornerRadius
     }
-    func addShadowToViewCollectionView(cornerRadius:CGFloat = 7, color: UIColor = UIColor(named: "3")as! UIColor) {
+    func addShadowToViewCollectionView(cornerRadius:CGFloat = 7, color: UIColor = UIColor(named: "3")as! UIColor) { // swiftlint:disable:this force_cast
         backgroundColor = UIColor.white
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = 1
@@ -95,7 +95,7 @@ extension UIView {
         layer.cornerRadius = cornerRadius
     }
     func addShadowToViewHistoryCell(cornerRadius:CGFloat = 7, color: UIColor = UIColor.lightGray) {
-        backgroundColor = UIColor(named: "brown")as! UIColor
+        backgroundColor = UIColor(named: "brown")as! UIColor // swiftlint:disable:this force_cast
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize.zero
@@ -183,7 +183,7 @@ extension UIView {
         let bundle = Bundle(for: type(of: self))
         let nibName = type(of: self).description().components(separatedBy: ".").last!
         let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiate(withOwner: self, options: nil).first as! UIView as! Self
+        return nib.instantiate(withOwner: self, options: nil).first as! UIView as! Self // swiftlint:disable:this force_cast
     }
 }
 //public extension UIView {

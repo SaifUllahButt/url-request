@@ -5,12 +5,11 @@
 //  Created by Zaryab on 5/17/21.
 //  Copyright © 2021 M Zaryab. All rights reserved.
 //
-
+// swiftlint:disable all
 import UIKit
 
-class getDetailViewController: UIViewController {
-    
-    //MARK:- IBoutlet
+class getDetailViewController: UIViewController { // swiftlint:disable:this type_name
+    // MARK:- IBoutlet
     @IBOutlet weak var tableView: UITableView!{
         didSet {
             tableView.delegate = self
@@ -44,38 +43,34 @@ class getDetailViewController: UIViewController {
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
     }
-    
-    
-    //MARK:- Methods
+    // MARK:- Methods
     
     func setButtonStyle(){
-        checkVersionOutlet.layer.borderColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1).cgColor
-        checkVersionOutlet.layer.cornerRadius = checkVersionOutlet.frame.size.height/2.5
+        checkVersionOutlet.layer.borderColor = UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1).cgColor
+        checkVersionOutlet.layer.cornerRadius = checkVersionOutlet.frame.size.height/2
         checkVersionOutlet.layer.borderWidth = 1
         checkVersionOutlet.clipsToBounds = true
-        updateVersionOutlet.layer.borderColor = UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1).cgColor
-        updateVersionOutlet.layer.cornerRadius = updateVersionOutlet.frame.size.height/2.5
+        updateVersionOutlet.layer.borderColor = UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1).cgColor
+        updateVersionOutlet.layer.cornerRadius = updateVersionOutlet.frame.size.height/2
         updateVersionOutlet.layer.borderWidth = 1
         updateVersionOutlet.clipsToBounds = true
     }
-    
-    @objc func pullToRefresh(){
+    @objc func pullToRefresh() {
         print("refreshing start")
-        DispatchQueue.main.asyncAfter(deadline: .now()+1){
-            let params : [String : AnyObject] = ["app_id": self.appId as AnyObject]
-            let data : [String : AnyObject] = ["data": params as AnyObject]
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            let params: [String : AnyObject] = ["app_id": self.appId as AnyObject]
+            let data: [String : AnyObject] = ["data": params as AnyObject]
             self.getDetail(param: data)
             self.tableView.refreshControl?.endRefreshing()
         }
     }
-    
     func getDetail(param: [String:Any]) {
         UserHandler.getDetail(param: param) { [self] (successResponse) in
             if successResponse.message == "Success"{
                 self.dataArray = successResponse.data
+                
                 print("found....")
                 self.dataArray = successResponse.data
-                
                 self.tableView.reloadData()
             } else {
                 let alert = Constants.showAlert(message: successResponse.message)
@@ -85,23 +80,20 @@ class getDetailViewController: UIViewController {
             let alert = Constants.showAlert(message: error.message)
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
-    
-    //MARK:-IBActions
+    // MARK:- IBActions
     @IBAction func checkVersionBtn(_ sender: Any) {
         print("check version")
-        let vc = storyboard?.instantiateViewController(identifier: "CheckVersionViewController")as! CheckVersionViewController
-        vc.appId = appId
-        vc.environment = environment
-        navigationController?.pushViewController(vc, animated: true)
+        let vcc = storyboard?.instantiateViewController(identifier: "VersionCheckVC")as! VersionCheckVC // swiftlint:disable:this force_cast
+//        vc.appId = appId
+//        vc.environment = environment
+        navigationController?.pushViewController(vcc, animated: true)
     }
     @IBAction func updateVersionBtn(_ sender: Any) {
         print("update version")
-        let vc = storyboard?.instantiateViewController(identifier: "UpdateVersionViewController")as! UpdateVersionViewController
-        vc.appId = appId
-//        vc.environment = environment
-        navigationController?.pushViewController(vc, animated: true)
+        let vcv = storyboard?.instantiateViewController(identifier: "UpdateVersionViewController")as!  UpdateVersionViewController // swiftlint:disable:this force_cast
+        vcv.appId = appId
+        navigationController?.pushViewController(vcv, animated: true)
     }
     
 }
@@ -116,8 +108,7 @@ func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 }
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: GetDetailCell.className, for: indexPath) as! GetDetailCell
-  
+    let cell = tableView.dequeueReusableCell(withIdentifier: GetDetailCell.className, for: indexPath) as! GetDetailCell // swiftlint:disable:this force_cast
     let objData = dataArray[indexPath.row]
 
     if let platform = objData.platform {
@@ -134,7 +125,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 }
 
 func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 110
+//    return 110
+    return tableView.frame.size.height/4
 }
 }
 
+//swiftlint: enable all

@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 //
 
+// swiftlint:disable all
 import Foundation
 
 /// Responsible for creating and managing `Request` objects, as well as their underlying `NSURLSession`.
@@ -897,3 +898,5 @@ open class SessionManager {
         }
     }
 }
+
+// swiftlint:enable all

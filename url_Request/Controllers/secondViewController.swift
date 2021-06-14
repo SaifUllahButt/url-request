@@ -8,31 +8,23 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    
     @IBOutlet weak var appNameField: UITextField!
     @IBOutlet weak var appIdField: UITextField!
     @IBOutlet weak var appBundleId: UITextField!
-    
     @IBOutlet weak var iosPlatform: UIButton!
     @IBOutlet weak var webPlatform: UIButton!
     @IBOutlet weak var androidPlatform: UIButton!
-  
-    var platform:[String] = ["ios"]
+    var platform: [String] = ["ios"]
 //    var platform = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         styleFieldAndButtons()
         iosPlatform.isSelected = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard));        view.addGestureRecognizer(tap)
-        
-        
         }
     
-    //MARK:- Mehotds
-    
-    //MARK:- Keyboard return
+    // MARK:- Mehotds
+    // MARK:- Keyboard return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
            textField.resignFirstResponder()
            return true
@@ -44,13 +36,9 @@ class SecondViewController: UIViewController {
        }
     
     func styleFieldAndButtons(){
-        appNameField.roundCorners(radius: 5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        
-        appBundleId.roundCorners(radius: 5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        
-        appIdField.roundCorners(radius: 5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        
-        
+        appBundleId.roundCorners(radius: 5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
+        appIdField.roundCorners(radius: 5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
+        appNameField.roundCorners(radius: 5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
     }
     
     func addApp(param: [String:Any]) {
@@ -118,10 +106,10 @@ class SecondViewController: UIViewController {
         print("print")
         if appIdField.text == "" || appIdField.text == "" || appNameField.text == "" || platform == []{
             let alert = Constants.showAlert(message: "Please Fill all fields and mark atleat one box")
-            self.present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil) 
         }
         else {
-            let params : [String : AnyObject] = ["app_name": appNameField.text as AnyObject, "app_id": appIdField.text as AnyObject, "app_bundle_id": appBundleId.text as AnyObject, "platform": self.platform as AnyObject]
+            let params: [String : AnyObject] = ["app_name": appNameField.text as AnyObject, "app_id": appIdField.text as AnyObject, "app_bundle_id": appBundleId.text as AnyObject, "platform": self.platform as AnyObject] // swiftlint:disable:this line_length
         let data : [String : AnyObject] = ["data": params as AnyObject]
         print(data)
             addApp(param: data)

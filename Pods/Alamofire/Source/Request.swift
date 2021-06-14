@@ -21,6 +21,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
+// swiftlint:disable all
 
 import Foundation
 
@@ -658,3 +659,4 @@ open class StreamRequest: Request {
 }
 
 #endif
+// swiftlint:enable all

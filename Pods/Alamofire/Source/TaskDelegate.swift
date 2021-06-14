@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 //
 
+//swiftlint:disable all
 import Foundation
 
 /// The task delegate is responsible for handling all delegate callbacks for the underlying task as well as
@@ -464,3 +465,5 @@ class UploadTaskDelegate: DataTaskDelegate {
         }
     }
 }
+
+// swiftlint:enable all

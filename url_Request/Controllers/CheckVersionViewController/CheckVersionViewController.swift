@@ -9,14 +9,13 @@
 import UIKit
 
 class CheckVersionViewController: UIViewController {
-    //MARK:-IBOutlet
+    // MARK:-IBOutlet
    
     @IBOutlet weak var checkVersionOutletBtn: UIButton!
-    @IBOutlet weak var versionNoOutlet: UITextField!
-    @IBOutlet weak var platformOutlet: UITextField!
+    @IBOutlet weak var versionNo: UITextField!
+    @IBOutlet weak var platform: UITextField!
     @IBOutlet weak var buildNoOutlet: UITextField!
-    
-    //MARK:-Properties
+    //MARK:- Properties
     var appId = ""
     var environment = ""
     override func viewDidLoad() {
@@ -75,9 +74,9 @@ class CheckVersionViewController: UIViewController {
             let alert = Constants.showAlert(message: "Please Fill all fields")
             self.present(alert, animated: true, completion: nil)
         }
-        else{
-        let params : [String : AnyObject] = ["platform": platformOutlet.text as AnyObject, "app_id": appId as AnyObject, "version_no": versionNoOutlet.text as AnyObject, "environment": environment as AnyObject, "build_no": buildNoOutlet.text as AnyObject ]
-        let data : [String : AnyObject] = ["data": params as AnyObject]
+        else {
+        let params: [String: AnyObject]=["platform": platform.text, "app_id": appId, "version_no": versionNo.text, "environment": environment, "build_no": buildNoOutlet.text]
+        let data: [String: AnyObject] = ["data": params as AnyObject]
         print(data)
         checkVersion(param: data)
         }

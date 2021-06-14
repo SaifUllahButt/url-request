@@ -9,26 +9,23 @@
 import UIKit
 
 class UpdateVersionViewController: UIViewController {
-    //MARK:-IBoutlet
+    // MARK:- IBoutlet
     @IBOutlet weak var addCmntsOutlet: UIButton!
     @IBOutlet weak var versionOulet: UITextField!
     @IBOutlet weak var buildOutlet: UITextField!
     @IBOutlet weak var updateOutlet: UIButton!
     @IBOutlet weak var testFlightBtnOutlet: UIButton!
     @IBOutlet weak var commentsOutlet: UITextField!
-    
     @IBOutlet weak var productionBtnOutlet: UIButton!
     @IBOutlet weak var iosBtn: UIButton!
     @IBOutlet weak var androidBtn: UIButton!
-    
     @IBOutlet weak var webBtn: UIButton!
     //MARK:-Properties
     var appId = ""
     var environment = "production"
     var platform = ""
     var commentArr = [String]()
-    
-    //MARK:- LifeCycle
+    // MARK:- LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,34 +33,27 @@ class UpdateVersionViewController: UIViewController {
         platform = "ios"
         styleFieldAndButtons()
         productionBtnOutlet.isSelected = true
-        
-       
-     
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard));        view.addGestureRecognizer(tap)
         
         print(appId)
         print(environment)
         print(platform)
     }
-    //MARK:-Methods
-    
+    // MARK:- Methods
      func styleFieldAndButtons(){
         addCmntsOutlet.layer.cornerRadius = 3
         addCmntsOutlet.clipsToBounds = true
-        
-        versionOulet.roundCorners(radius: versionOulet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        buildOutlet.roundCorners(radius: buildOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        commentsOutlet.roundCorners(radius: commentsOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
-        updateOutlet.roundCorners(radius: updateOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 47/255, green: 72/255, blue: 85/225, alpha: 1), borderWidth: 1)
+        versionOulet.roundCorners(radius: versionOulet.frame.size.height/2.5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
+        buildOutlet.roundCorners(radius: buildOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
+        commentsOutlet.roundCorners(radius: commentsOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
+        updateOutlet.roundCorners(radius: updateOutlet.frame.size.height/2.5, bordorColor: UIColor(red: 102/255, green: 39/255, blue: 26/225, alpha: 1), borderWidth: 1)
      }
-    //MARK:- Keyboard return
+    // MARK:- Keyboard return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
            textField.resignFirstResponder()
            return true
        }
-       
        @objc func dismissKeyboard() {
-           //Causes the view (or one of its embedded text fields) to resign the first responder status.
            view.endEditing(true)
        }
 
@@ -143,7 +133,7 @@ class UpdateVersionViewController: UIViewController {
         }
         else{
             self.commentArr.append(commentsOutlet.text!)
-            let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": versionOulet.text as AnyObject, "environment": environment as AnyObject, "build_no": buildOutlet.text as AnyObject, "comments": commentArr as AnyObject  ]
+            let params : [String : AnyObject] = ["platform": platform as AnyObject, "app_id": appId as AnyObject, "version_no": versionOulet.text as AnyObject, "environment": environment as AnyObject, "build_no": buildOutlet.text as AnyObject, "comments": commentArr as AnyObject  ] // swiftlint:disable:this line_length
         let data : [String : AnyObject] = ["data": params as AnyObject]
         print(data)
         updateVersion(param: data)

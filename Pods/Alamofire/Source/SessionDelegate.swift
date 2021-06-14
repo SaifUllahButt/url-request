@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 //
 
+//swiftlint:disable all
 import Foundation
 
 /// Responsible for handling all delegate callbacks for the underlying session.
@@ -723,3 +724,5 @@ extension SessionDelegate: URLSessionStreamDelegate {
 }
 
 #endif
+
+//swiftlint:enable all

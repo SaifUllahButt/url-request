@@ -2,7 +2,7 @@
 //
 //    RootClass.swift
 //    Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
-
+// swiftlint: disable all
 import Foundation
 
 struct DetailAppRoot{
@@ -45,3 +45,5 @@ struct DetailAppRoot{
     }
 
 }
+
+// swiftlint : enable all

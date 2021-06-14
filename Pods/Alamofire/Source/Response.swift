@@ -22,6 +22,7 @@
 //  THE SOFTWARE.
 //
 
+// swiftlint:disable all
 import Foundation
 
 /// Used to store all data associated with an non-serialized response of a data or upload request.
@@ -572,3 +573,4 @@ extension DownloadResponse: Response {
     public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
 #endif
 }
+// swiftlint:enable all

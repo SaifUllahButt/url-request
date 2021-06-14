@@ -6,73 +6,11 @@
 //  Copyright © 2021 M Zaryab. All rights reserved.
 //
 
-
-
 import Alamofire
 import UIKit
 
-class NetworkHandler {
-    /*
-    class func postRequest(url: String, parameters: Parameters?, success: @escaping (Any) -> Void, failure: @escaping (NetworkError) -> Void) {
-        if Network.isAvailable {
-            var headers: HTTPHeaders
-                headers = [
-                    "Accept": "application/json"
-                ]
-            debugPrint(headers)
-            let manager = Alamofire.Session.default
-            manager.session.configuration.timeoutIntervalForRequest = Constants.NetworkError.timeOutInterval
-            manager.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).validate(statusCode: 200..<600).responseJSON{(response) -> Void in
-                print(response)
-                guard let statusCode = response.response?.statusCode else {
-                    var networkError = NetworkError()
-                    networkError.status = Constants.NetworkError.timout
-                    networkError.message = Constants.NetworkError.timoutError
-                    failure(networkError)
-                    return
-                }
-                if statusCode == 422 {
-                    var networkError = NetworkError()
-                    
-                    let response = response.value!
-                    let dictionary = response as! [String: AnyObject]
-                    
-                    guard let message = dictionary["error"] as! String? else {
-                        networkError.status = statusCode
-                        networkError.message = "Validation Error"
-                        failure(networkError)
-                        return
-                    }
-                    networkError.status = statusCode
-                    networkError.message = message
-                    failure(networkError)
-                } else {
-                    switch (response.result) {
-                    case .success:
-                        let response = response.value!
-                        success(response)
-                        break
-                    case .failure(let error):
-                        var networkError = NetworkError()
-                        if error._code == NSURLErrorTimedOut {
-                            networkError.status = Constants.NetworkError.timout
-                            networkError.message = Constants.NetworkError.timoutError
-                            failure(networkError)
-                        } else {
-                            networkError.status = Constants.NetworkError.generic
-                            networkError.message = Constants.NetworkError.genericError
-                            failure(networkError)
-                        }
-                        break
-                    }
-                }
-            }
-        } else {
-            let networkError = NetworkError(status: Constants.NetworkError.internet, message: Constants.NetworkError.internetError)
-            failure(networkError)
-        }
-    }*/
 
+class NetworkHandler {
     class func postRequest(url: String, parameters: Parameters?, success: @escaping (Any) -> Void, failure: @escaping (NetworkError) -> Void) {
         if Network.isAvailable {
             var headers: HTTPHeaders
@@ -95,9 +33,10 @@ class NetworkHandler {
                     var networkError = NetworkError()
                     
                     let response = response.result.value!
-                    let dictionary = response as! [String: AnyObject]
+                    let dictionary = response as! [String: AnyObject] // swiftlint:disable:this force_cast
                     
-                    guard let message = dictionary["error"] as! String? else {
+                    guard let message = dictionary["error"] as! String?// swiftlint:disable:this force_cast
+                    else {
                         networkError.status = statusCode
                         networkError.message = "Validation Error"
                         failure(networkError)
@@ -150,9 +89,10 @@ class NetworkHandler {
                         var networkError = NetworkError()
                         
                         let response = response.result.value!
-                        let dictionary = response as! [String: AnyObject]
+                        let dictionary = response as! [String: AnyObject] // swiftlint:disable:this force_cast
                         
-                        guard let message = dictionary["error"] as! String? else {
+                        guard let message = dictionary["error"] as! String? // swiftlint:disable:this force_cast
+                        else {
                             networkError.status = statusCode
                             networkError.message = "Validation Error"
                             
@@ -228,7 +168,7 @@ class NetworkHandler {
     
     //MARK: Upload Multipart File
     
-    class func upload(url: String, fileUrl: URL, fileName: String, params: Parameters?, uploadProgress: @escaping (Int) -> Void, success: @escaping (Any?) -> Void, failure: @escaping (NetworkError) -> Void) {
+    class func upload(url: String, fileUrl: URL, fileName: String, params: Parameters?, uploadProgress: @escaping (Int) -> Void, success: @escaping (Any?) -> Void, failure: @escaping (NetworkError) -> Void) { // swiftlint:disable:this line_length
         var headers: HTTPHeaders
             headers = [
                 "Accept": "application/json"

@@ -18,7 +18,7 @@ class UserHandler {
     //MARK:- get all apps.
     class func getAllApps(param: [String:Any], success: @escaping(AllAppsRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: allAppUrl, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
+            let dictionary = successResponse as! [String:Any] // swiftlint:disable:this force_cast
             let obj = AllAppsRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in
@@ -26,10 +26,10 @@ class UserHandler {
         }
     }
     
-    //MARK:- get detail of an app
+    // MARK:- get detail of an app
     class func getDetail(param: [String:Any], success: @escaping(DetailAppRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: detailAppUrl, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
+            let dictionary = successResponse as! [String:Any] // swiftlint:disable:this force_cast
             let obj = DetailAppRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in
@@ -40,7 +40,7 @@ class UserHandler {
     //MARK:- check app version
     class func checkVersion(param: [String:Any], success: @escaping(CheckVersionRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: checkAppVersion, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
+            let dictionary = successResponse as! [String:Any] // swiftlint:disable:this force_cast
             let obj = CheckVersionRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in
@@ -51,7 +51,7 @@ class UserHandler {
     //MARK:- update app version
     class func updateVersion(param: [String:Any], success: @escaping(UpdateVersionRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: updateVersionUrl, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
+            let dictionary = successResponse as! [String:Any] // swiftlint:disable:this force_cast
             let obj = UpdateVersionRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in
@@ -62,7 +62,7 @@ class UserHandler {
     //MARK:- add app
     class func addApp(param: [String:Any], success: @escaping(AddAppRoot)->Void, failure: @escaping(NetworkError)->Void) {
         NetworkHandler.postRequest(url: addAppUrl, parameters: param) { (successResponse) in
-            let dictionary = successResponse as! [String:Any]
+            let dictionary = successResponse as! [String:Any] // swiftlint:disable:this force_cast
             let obj = AddAppRoot(fromDictionary: dictionary)
             success(obj)
         } failure: { (error) in

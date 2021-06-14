@@ -8,4 +8,5 @@ target 'url_Request' do
   # Pods for url_Request
 
 pod 'Alamofire', '~> 4.9.1'
+pod 'SwiftLint'
 end

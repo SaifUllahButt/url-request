@@ -33,7 +33,6 @@
 		66620AA8265F9D05006378FC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66620AA7265F9D05006378FC /* FirstViewController.swift */; };
 		66620AAC265F9D15006378FC /* VersionCheckVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66620AAB265F9D15006378FC /* VersionCheckVC.swift */; };
 		66EA4756265CDE47003CF816 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4755265CDE47003CF816 /* View.swift */; };
-		66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA4758265CE528003CF816 /* CheckVersionViewController.swift */; };
 		66EA475C265CFFFD003CF816 /* UpdateVersionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */; };
 		66EA475F265D040A003CF816 /* UpdateVersionRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */; };
 		66F4C5B2265F9F2600113865 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F4C5B1265F9F2600113865 /* SecondViewController.swift */; };
@@ -69,7 +68,6 @@
 		66620AA7265F9D05006378FC /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		66620AAB265F9D15006378FC /* VersionCheckVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionCheckVC.swift; sourceTree = "<group>"; };
 		66EA4755265CDE47003CF816 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		66EA4758265CE528003CF816 /* CheckVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckVersionViewController.swift; sourceTree = "<group>"; };
 		66EA475B265CFFFD003CF816 /* UpdateVersionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionViewController.swift; sourceTree = "<group>"; };
 		66EA475E265D040A003CF816 /* UpdateVersionRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVersionRoot.swift; sourceTree = "<group>"; };
 		66F4C5B1265F9F2600113865 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				66F4C5B1265F9F2600113865 /* SecondViewController.swift */,
 				66620AAB265F9D15006378FC /* VersionCheckVC.swift */,
 				66EA475A265CFFE9003CF816 /* UpdateVersionViewController */,
-				66EA4757265CE512003CF816 /* CheckVersionViewController */,
 				2800422824E56CBB00CF59FF /* ViewController.swift */,
 				281529892652C0E10017B668 /* getAllAppsViewController */,
 				2815298A2652C1030017B668 /* getDetailViewController */,
@@ -218,14 +215,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		66EA4757265CE512003CF816 /* CheckVersionViewController */ = {
-			isa = PBXGroup;
-			children = (
-				66EA4758265CE528003CF816 /* CheckVersionViewController.swift */,
-			);
-			path = CheckVersionViewController;
-			sourceTree = "<group>";
-		};
 		66EA475A265CFFE9003CF816 /* UpdateVersionViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +255,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2800423524E56CBD00CF59FF /* Build configuration list for PBXNativeTarget "url_Request" */;
 			buildPhases = (
+				66670DC5266F5F9E00A8E3B3 /* ShellScript */,
 				6CB2245B6113E594734BC352 /* [CP] Check Pods Manifest.lock */,
 				2800421D24E56CBB00CF59FF /* Sources */,
 				2800421E24E56CBB00CF59FF /* Frameworks */,
@@ -347,6 +337,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-url_Request/Pods-url_Request-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		66670DC5266F5F9E00A8E3B3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		6CB2245B6113E594734BC352 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,7 +396,6 @@
 				281529932652C2F00017B668 /* AllAppsData.swift in Sources */,
 				2800422924E56CBB00CF59FF /* ViewController.swift in Sources */,
 				2800423924E56E0C00CF59FF /* File.swift in Sources */,
-				66EA4759265CE528003CF816 /* CheckVersionViewController.swift in Sources */,
 				281529962652D77A0017B668 /* DetailAppRoot.swift in Sources */,
 				66620AAC265F9D15006378FC /* VersionCheckVC.swift in Sources */,
 				281529812652939E0017B668 /* NetworkAvailability.swift in Sources */,
